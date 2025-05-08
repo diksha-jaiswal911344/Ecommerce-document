@@ -1,0 +1,303 @@
+***************************************Api listing for Ecommerce Project***********************************
+
+1. Auth Module
+
+    1.1 api/signup (with password)      
+        POST request
+
+        requested JSON:-
+
+        {
+            "email":"asds@example.com"
+            "CreatePassword":"afaergea"
+            "Conform password":"afaergea"
+        }
+
+        response JSON:-
+        {
+            "code":"201"
+            "success":"true"
+            "message::"user registered successfully"
+            "data":{
+                "token":"sadghyargyufhcbhjzgtyfgdhcbvlyuryfhdvbhregyuaughvhkgfgayugaawehuweu",
+                "refresh token":"aesygfiut7uwegyfshrt7oyugehrjndmfgn89657tywgnvcvyuelgywrokhbdhgfyuadjvnj"
+            }
+        }
+
+    1.2 api/signup_request-Otp          
+        POST request
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com"
+        }
+
+        response JSON
+        {
+            "code":"200"
+            "success":"true"
+            "message::"otp send to email successfully"
+            "data":{
+                "email":"dauery@gmail.com"
+                "status":"sent"
+            }
+        }
+
+    1.3 api/signup_verify-Otp           
+        POST request
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com"
+            "Otp":"324325"
+        }
+        
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "Signup OTP verified",
+            "data": {
+                "userId": "9",
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjksInN1YiI6IkthcmxpZS5QYXJpc2lhbjI2QGV4YW1wbGUubmV0IiwiaWF0IjoxNzQ2NjExMzE5LCJleHAiOjE3NDY2OTc3MTl9.y7NtTr8oczsLzfYqZalT51RJxxc57AhSqIFU0aQMdjU",
+                "refresh token":"fafaygyt7yarhejbfger67iyfh9q9347t73uhtfuyer66ffgjnfhdgyuvsldvhufgdfvghfdtyscuesgefysghgseyrgyuerghreygt4747uekhgbhbfghguyt3758yt87hrjfhjg758t834ut949t87t5."
+            }
+        }
+
+    1.4 api/signin (with password)      
+        POST request
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com",
+            "password":"password"
+        }
+
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "user signed in",
+            "data": {
+                "userId": "9",
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjksInN1YiI6IkthcmxpZS5QYXJpc2lhbjI2QGV4YW1wbGUubmV0IiwiaWF0IjoxNzQ2NjExMzE5LCJleHAiOjE3NDY2OTc3MTl9.y7NtTr8oczsLzfYqZalT51RJxxc57AhSqIFU0aQMdjU",
+                "refresh token":"fafaygyt7yarhejbfger67iyfh9q9347t73uhtfuyer66ffgjnfhdgyuvsldvhufgdfvghfdtyscuesgefysghgseyrgyuerghreygt4747uekhgbhbfghguyt3758yt87hrjfhjg758t834ut949t87t5."
+            }
+        }
+        
+    1.5 api/signin_request-Otp          
+        POST request
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com"
+        }
+
+        response JSON
+        {
+            "code":"200"
+            "success":"true"
+            "message::"otp send to email successfully"
+            "data":{
+                "email":"dauery@gmail.com"
+                "status":"sent"
+            }
+        }
+    1.6 api/signin_verify-Otp           
+        POST request                    
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com"
+            "Otp":"324325"
+        }
+        
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "Login OTP verified",
+            "data": {
+                "userId": "9",
+                "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjksInN1YiI6IkthcmxpZS5QYXJpc2lhbjI2QGV4YW1wbGUubmV0IiwiaWF0IjoxNzQ2NjExMzE5LCJleHAiOjE3NDY2OTc3MTl9.y7NtTr8oczsLzfYqZalT51RJxxc57AhSqIFU0aQMdjU",
+                "refresh token":"fafaygyt7yarhejbfger67iyfh9q9347t73uhtfuyer66ffgjnfhdgyuvsldvhufgdfvghfdtyscuesgefysghgseyrgyuerghreygt4747uekhgbhbfghguyt3758yt87hrjfhjg758t834ut949t87t5."
+            }
+        }
+    1.7 api/signin/forget-password      
+        POST request
+
+        requested JSON
+        {
+            "email":"aefhrey@gmail.com"
+        }
+
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "OTP send to verify user to create now password",
+            "data": {
+                "email":"aefhrey@gmail.com"
+                "status":"sent"
+            }
+        }
+    1.8 api/signin/update-password      
+        POST request
+
+        requested JSON
+        {
+            "otp":"aefhrey@gmail.com"
+            "
+        }
+
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "link for creating new password send to the email",
+            "data": {
+                "email":"aefhrey@gmail.com"
+                "status":"sent"
+            }
+        }
+
+    1.9 api/signup/onboarding page      
+        POST request
+
+        requested JSON
+        {
+            "First Name":"first name",
+            "Last Name":"last name",
+            "Gender":"gender",
+            "DOB":"dd-mm-yyyy"
+        }
+
+        response JSON
+        {
+            "code": 200,
+            "success": true,
+            "message": "user info saved to database",
+            "data": {
+                "user_id":"9"
+            }
+        }
+
+2. Home page Module
+
+    2.1 Apis for Buyer
+
+    2.1.1 api/categories                    (GET all categories)
+    2.1.2 api/banners                       (GET all banners)    
+    2.1.3 api/products/banner_id            (GET products by banner_id)
+    2.1.4 api/products/category_id          (GET products by category_id)
+    2.1.5 api/category/category_id          (GET specific category from categories)
+    2.1.6 api/feedbacks                     (GET feedbacks)
+    2.1.7 api/feedbacks                     (POST method creating feedbacks)
+
+    2.2 Apis for seller
+
+    2.2.1 api/categories                    (POST,PUT,DELETE method)
+    2.2.2 api/banners                       (POST,PUT,DELETE method)
+    2.2.3 api/products                      (POST,PUT,DELETE method)
+
+3. Products list page
+
+    3.1 Apis for Buyer
+
+    3.1.1 api/products + filters                       (GET all filters)
+    3.1.2 api/products/category_id          (GET all products of specific category)
+
+    3.2 Apis for seller    
+
+    3.2.1 api/products                       (POST,PUT,DELETE methods)
+
+4. Product Detail Page
+
+    4.1 Apis for Buyer
+
+    4.1.1 api/products                      (GET method for getting product details)
+    4.1.2 api/user-comment/product_id       (GET method to get all the  of specific product)
+    4.1.3 api/faq/product_id                (GET method to get faqs of specific products)
+    4.1.4 api/product_id/category/products  (GET method to get all the related products) 
+
+    4.2 Apis for Seller
+
+    4.2.1 api/products                      (POST, PUT, DELETE methods)
+    
+    4.3 Apis for user_comments
+
+    4.3.1 api/user-comments                 (CURD methods)
+
+5. Cart Page
+
+    5.1 Apis for Buyers
+
+    5.1.1 api/cart-products                 (GET method to show products inside cart)
+    5.1.2 api/cart                          (POST method to add product to cart)
+    5.1.3 api/cart                          (DELETE method to remove product from cart)
+
+6. Checkout page 
+
+
+7.  Profile/Contact page
+
+    7.1 Apis for Buyers
+
+    7.1.1 api/profile                       (GET, POST, PUT method)
+
+8.  Wishlist page
+    
+    8.1 Apis for Buyers
+
+    8.1.1 api/wishlist-products             (POST,GET,DELETE method)
+
+9. MyOrders page
+
+    9.1 Apis for Buyers
+
+    9.1.1 api/orders                        (GET method to get the list of all purchased products)
+
+*************************************************Tables*********************************************
+
+    1.0 RoleType (enum)
+        ROLE_ADMIN
+        ROLE_SELLER
+        ROLE_BUYER
+
+    1.1  Users
+         Schema: id | name | email | hash_password | role(RoleType) | phone_no
+
+    1.2  User_addresses
+         Schema: id | user_id | address_type | line1 | line2 | city | state | postal_code | country | is_default
+
+    1.3  Categories
+         Schema: id | name | description | image_url | is_active
+
+    1.4  Products
+         Schema: id | name |description | brand  | category_id | seller_id | image_url | avg_rating | is_active | is_deleted
+
+    1.5 Product_attributes
+         Schema: id | product_id | attribute_name | attribute_value
+
+    1.6 Product_variants
+         Schema: id | product_id | variant_name | price | image_url
+
+    1.7  product_inventory
+        Schema: id | product_variant_id | stock_quantity | reserved_quantity
+
+    1.8  WishList
+        Schema: id | user_id | product_id
+
+    1.9  Orders
+        Schema: id | user_id | total_amount | status | shipping_address_id | billing_address_id | payment_method_id | created_at
+
+    1.10  Order_items
+        Schema: id | order_id | product_id | quantity | price
+
+    1.11  Reviews
+        Schema: id | product_id | user_id | rating | comment | created_at    
+
+    1.12  Cart
+        Schema: id | user_id | product_id | quantity 
+
+    
